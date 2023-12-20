@@ -8,9 +8,10 @@ print("crawl_date =", crawl_date)
 import requests
 import pandas as pd
 
-import fii_functionz
+#import fii_functionz
 
-url = 'https://www.fpi.nsdl.co.in/web/StaticReports/Fortnightly_Sector_wise_FII_Investment_Data/FIIInvestSector_'+crawl_date+'.html'
+#url = 'https://www.fpi.nsdl.co.in/web/StaticReports/Fortnightly_Sector_wise_FII_Investment_Data/FIIInvestSector_'+crawl_date+'.html'
+url = 'https://www.fpi.nsdl.co.in/web/StaticReports/Fortnightly_Sector_wise_FII_Investment_Data/FIIInvestSector_Nov302023.html'
 
 print(url)
 #exit()
@@ -30,4 +31,13 @@ print(json_data)
 
 date = today.strftime("%b-%d-%Y")
 
-fii_functionz.postNsdlSectoreInvestDataofFpi(date, json_data)  
+#fii_functionz.postNsdlSectoreInvestDataofFpi(date, json_data)  
+
+API_URL = "https://staging-trade.zahiralam.com/fii-dii/get-nsdl-sectore-invest-data-of-fpi-fii";
+#print(API_URL); exit();
+data = {'json_data':json_data, 
+            'date':date,
+            'server':'hostinger',} 
+    
+# sending post request and saving response as response object 
+r = requests.post(url = API_URL, data = data)
