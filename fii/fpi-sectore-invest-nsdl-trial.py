@@ -39,5 +39,5 @@ data = {'json_data':json_data,
             'date':date,
             'server':'hostinger',} 
     
-# sending post request and saving response as response object 
+# sending post request and saving response as response object : 
 r = requests.post(url = API_URL, data = data)
