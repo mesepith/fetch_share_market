@@ -21,7 +21,7 @@ for n in range(26):
         print(json_data)
 
         date_str = (start_date + timedelta(n)).strftime("%b-%d-%Y")
-        API_URL = "https://staging-trade.zahiralam.com/fii-dii/get-nsdl-sectore-invest-data-of-fpi-fii"
+        API_URL = "https://trade.zahiralam.com/fii-dii/get-nsdl-sectore-invest-data-of-fpi-fii"
         data = {'json_data':json_data, 'date':date_str, 'server':'hostinger'} 
         r = requests.post(url = API_URL, data = data)
     except ValueError:
