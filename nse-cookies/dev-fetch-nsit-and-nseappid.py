@@ -26,7 +26,8 @@ headers = {
         'content-type': "application/json",
         'cache-control': "no-cache"
         }
-API_URL = "http://localhost/trade/Fetch_Nse_Cookies/insertNsitAndnseappid";
+# API_URL = "http://localhost/trade/Fetch_Nse_Cookies/insertNsitAndnseappid"; #for local development 
+API_URL = "https://trade.zahiralam.com/Fetch_Nse_Cookies/insertNsitAndnseappid"; # for production
 response = requests.post(API_URL, data=payload)
 
 print('response from api')
