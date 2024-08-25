@@ -7,7 +7,7 @@ start_date = date.today() - timedelta(days=25)
 
 # Iterate from start_date to today
 for n in range(26):
-    crawl_date = (start_date + timedelta(n)).strftime("%B%d%Y")
+    crawl_date = (start_date + timedelta(n)).strftime("%b%d%Y")
     url = 'https://www.fpi.nsdl.co.in/web/StaticReports/Fortnightly_Sector_wise_FII_Investment_Data/FIIInvestSector_'+crawl_date+'.html'
     print(url)
     # exit();
