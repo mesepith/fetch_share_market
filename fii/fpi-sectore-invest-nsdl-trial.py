@@ -7,7 +7,12 @@ start_date = date.today() - timedelta(days=25)
 
 # Iterate from start_date to today
 for n in range(26):
+    print('-------------------------------------', n)
+    if(n>0): exit(); #comment after debug
     crawl_date = (start_date + timedelta(n)).strftime("%b%d%Y")
+    print(crawl_date)
+    # crawl_date='Sep152024'; #comment after debug
+    crawl_date='Sep152024'; #comment after debug
     url = 'https://www.fpi.nsdl.co.in/web/StaticReports/Fortnightly_Sector_wise_FII_Investment_Data/FIIInvestSector_'+crawl_date+'.html'
     print(url)
     # exit();
@@ -20,9 +25,11 @@ for n in range(26):
         tablez = df_list[0]
         json_data = tablez.to_json(orient = "split")
         print(json_data)
+        # exit(); #comment after debug
 
         date_str = (start_date + timedelta(n)).strftime("%b-%d-%Y")
-        API_URL = "https://trade.zahiralam.com/fii-dii/get-nsdl-sectore-invest-data-of-fpi-fii"
+        API_URL = "http://localhost/trade/fii-dii/get-nsdl-sectore-invest-data-of-fpi-fii"
+        # API_URL = "https://trade.zahiralam.com/fii-dii/get-nsdl-sectore-invest-data-of-fpi-fii"
         data = {'json_data':json_data, 'date':date_str, 'server':'hostinger'} 
         r = requests.post(url = API_URL, data = data)
     except ValueError:
