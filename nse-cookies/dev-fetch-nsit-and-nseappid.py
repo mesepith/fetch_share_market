@@ -26,6 +26,9 @@ response = session.get(quote_url, timeout=10)
 
 # Step 3: Get cookies
 cookies = session.cookies
+for cookie in session.cookies:
+    print(cookie.name, cookie.value)
+
 nsit = cookies.get('nsit')
 nseappid = cookies.get('nseappid')
 
