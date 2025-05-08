@@ -30,7 +30,7 @@ nsit = cookies.get('nsit')
 nseappid = cookies.get('nseappid')
 
 payload = {"nsit": nsit, "nseappid": nseappid}
-print(payload)
+print('payload from NSE:', payload)
 
 # Step 4: Post to your API
 API_URL = "https://trade.zahiralam.com/Fetch_Nse_Cookies/insertNsitAndnseappid"
